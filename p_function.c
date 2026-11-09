@@ -1,3 +1,9 @@
+/*
+ * Р›Р°Р±РѕСЂР°С‚РѕСЂРЅР°СЏ 4.5 РЈСЃР»РѕР¶РЅРµРЅРЅР°СЏ Р·Р°РґР°С‡Р° РѕР±СЂР°Р±РѕС‚РєРё С‚СЂРµС… РјР°СЃСЃРёРІРѕРІ
+ * Copyright (c) 2026 ankh-331one
+ *
+ * Licensed under the MIT License; see LICENSE file for details.
+ */
 #include <stdio.h>
 #include <malloc.h>
 #include "p_function.h"
@@ -6,11 +12,11 @@
 int input(char a, int min_d, int max_d){
     int n;
     do{
-        printf("\nВведите размер %c: ", a);
+        printf("\nР’РІРµРґРёС‚Рµ СЂР°Р·РјРµСЂ %c: ", a);
         scanf("%d", &n);
         if (n < min_d || n > max_d){
             printf("\n===============================================================\n");
-            printf("Неверно задан размер %c", a);
+            printf("РќРµРІРµСЂРЅРѕ Р·Р°РґР°РЅ СЂР°Р·РјРµСЂ %c", a);
             printf("\n===============================================================\n");
         }
     }while (n < min_d || n > max_d);
@@ -26,7 +32,7 @@ void mass_input(FILE* in_file, int n, double* *X){
 }
 
 void mass_print(FILE* out_file, char a, int n, double* X){
-    fprintf(out_file, "\nМассив %c(%d): [%f", a, n, X[0]);
+    fprintf(out_file, "\nРњР°СЃСЃРёРІ %c(%d): [%f", a, n, X[0]);
     for (int i = 1; i < n; i++){
         fprintf(out_file, ", %.3f", X[i]);
     }
@@ -56,9 +62,9 @@ void cr_geomet_poloz(FILE* out_file, int n, double* X){
         }
     }
     if (k == 0){
-        fprintf(out_file, "\n\nВ выбранном векторе нет положительных элементов");
+        fprintf(out_file, "\n\nР’ РІС‹Р±СЂР°РЅРЅРѕРј РІРµРєС‚РѕСЂРµ РЅРµС‚ РїРѕР»РѕР¶РёС‚РµР»СЊРЅС‹С… СЌР»РµРјРµРЅС‚РѕРІ");
     }else{
-        fprintf(out_file, "\n\nСреднее геометрическое положительных элементов: %.3f",pow(res,(1.0/k)));
+        fprintf(out_file, "\n\nРЎСЂРµРґРЅРµРµ РіРµРѕРјРµС‚СЂРёС‡РµСЃРєРѕРµ РїРѕР»РѕР¶РёС‚РµР»СЊРЅС‹С… СЌР»РµРјРµРЅС‚РѕРІ: %.3f",pow(res,(1.0/k)));
     }
     return;
 }
