@@ -17,7 +17,6 @@
     24.В том из массивов, у которого индекс максимума наибольший, найти
  среднее геометрическое положительных элементов.
 */
-
 #include <stdio.h>
 #include <locale.h>
 #include <malloc.h>
@@ -35,21 +34,24 @@ int main()
     fprintf(out_file, "Программа 4.5v24. Сборка: %s %s", __DATE__, __TIME__);
     fprintf(out_file, "\n---------------------------------------------------------------\n");
 
-    FILE* in_file = fopen("input.txt", "r");
-
+    FILE* in_A = fopen("input_A.txt", "r");
     int n_a = input('A', L_DIAPAZON_MASSIV, R_DIAPAZON_MASSIV);
     double* A;
-    mass_input(in_file, n_a, &A);
+    mass_input(in_A, n_a, &A);
+    fclose(in_A);
 
+    FILE* in_B = fopen("input_B.txt", "r");
     int n_b = input('B', L_DIAPAZON_MASSIV, R_DIAPAZON_MASSIV);
     double* B;
-    mass_input(in_file, n_b, &B);
+    mass_input(in_B, n_b, &B);
+    fclose(in_B);
 
+    FILE* in_C = fopen("input_C.txt", "r");
     int n_c = input('C', L_DIAPAZON_MASSIV, R_DIAPAZON_MASSIV);
     double* C;
-    mass_input(in_file, n_c, &C);
+    mass_input(in_C, n_c, &C);
+    fclose(in_C);
 
-    fclose(in_file);
 
     mass_print(out_file,'a', n_a, A);
     mass_print(out_file,'b', n_b, B);
