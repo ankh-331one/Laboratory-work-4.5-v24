@@ -9,14 +9,14 @@
 #include "p_function.h"
 #include <math.h>
 
-int input(char a, int min_d, int max_d){
+int input(char name, int min_d, int max_d){
     int n;
     do{
-        printf("\nВведите размер %c: ", a);
+        printf("\nВведите размер %c: ", name);
         scanf("%d", &n);
         if (n < min_d || n > max_d){
             printf("\n===============================================================\n");
-            printf("Неверно задан размер %c", a);
+            printf("Неверно задан размер %c", name);
             printf("\n===============================================================\n");
         }
     }while (n < min_d || n > max_d);
@@ -31,8 +31,8 @@ void mass_input(FILE* in_file, int n, double* *X){
     return;
 }
 
-void mass_print(FILE* out_file, char a, int n, double* X){
-    fprintf(out_file, "\nМассив %c(%d): [%f", a, n, X[0]);
+void mass_print(FILE* out_file, char name, int n, double* X){
+    fprintf(out_file, "\nМассив %c(%d): [%.3f", name, n, X[0]);
     for (int i = 1; i < n; i++){
         fprintf(out_file, ", %.3f", X[i]);
     }
