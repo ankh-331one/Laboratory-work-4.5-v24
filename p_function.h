@@ -8,10 +8,10 @@
 #define P_FUNCTION.H
 #include <stdio.h>
 
-int input(char a, int min_d, int max_d);
+int input(char name, int min_d, int max_d);
 
 void mass_input(FILE* in_file, int n, double* *X);
-void mass_print(FILE* out_file, char a, int n, double* X);
+void mass_print(FILE* out_file, char name, int n, double* X);
 
 int id_max(int n, double* X);
 void cr_geomet_poloz(FILE* out_file, int n, double* X);
